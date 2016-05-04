@@ -12,15 +12,12 @@ This is a Git repo for a customized version of the official Docker image for Rab
     rabbit:
       ports:
         - 15672/tcp
-      hostname: rabbit.rancher.internal
+      hostname: rabbit.edoctor.internal
       environment:
-        RANCHER_SERVICE_NAME: rabbit
+        RANCHER_SERVICE_NAME: rabbitmq
         RABBITMQ_ERLANG_COOKIE: "RABBITCOOKIE"
       labels:
         io.rancher.container.dns: true
-      image: dsvmacdonald/rancher-rabbitmq
-
-## Example rancher-compose.yml
-
-    rabbit:
-      scale: 3
+        io.rancher.scheduler.affinity:host_label: rabbitmq=true
+        io.rancher.scheduler.global: 'true'
+      image: taina0407/rancher-rabbitmq
