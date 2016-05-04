@@ -20,4 +20,4 @@ This is a Git repo for a customized version of the official Docker image for Rab
         io.rancher.container.dns: true
         io.rancher.scheduler.affinity:host_label: rabbitmq=true
         io.rancher.scheduler.global: 'true'
-      image: taina0407/rancher-rabbitmq
+      image: tainaedoctor/rabbitmq
